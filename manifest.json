@@ -6,42 +6,27 @@
       "en": "Our fleet"
     },
     {
-      "key": "port",
-      "fr": "Port de Kribi",
-      "en": "Port of Kribi"
-    },
-    {
       "key": "operations",
       "fr": "Opérations",
       "en": "Operations"
-    },
-    {
-      "key": "equipes",
-      "fr": "Nos équipes",
-      "en": "Our teams"
-    },
-    {
-      "key": "partenaires",
-      "fr": "Partenaires",
-      "en": "Partners"
     }
   ],
   "photos": [
     {
       "src": "images/galerie/flotte/flotte-afribridge.jpg",
       "category": "flotte",
-      "title_fr": "Flotte AfriBridge",
-      "title_en": "AfriBridge Fleet",
-      "sub_fr": "Camion semi-remorque brandé · Kribi",
-      "sub_en": "Branded semi-trailer truck · Kribi"
+      "title_fr": "Flotte Afribridge",
+      "title_en": "Flotte Afribridge",
+      "sub_fr": "Notre flotte",
+      "sub_en": "Our fleet"
     },
     {
       "src": "images/galerie/operations/transport-cma-cgm.jpg",
       "category": "operations",
-      "title_fr": "Transport conteneur CMA CGM",
-      "title_en": "CMA CGM Container Transport",
-      "sub_fr": "Mercedes Actros · Port de Kribi",
-      "sub_en": "Mercedes Actros · Port of Kribi"
+      "title_fr": "Transport Cma Cgm",
+      "title_en": "Transport Cma Cgm",
+      "sub_fr": "Opérations",
+      "sub_en": "Operations"
     }
   ]
 }
