@@ -796,7 +796,7 @@
       var message   = document.getElementById('d-message').value.trim();
       var errDiv    = document.getElementById('devis-error');
       errDiv.style.display = 'none';
-      if(!nom || !email || !tel || !service){
+      if(!nom || !email || !service){
         errDiv.textContent = 'Veuillez remplir tous les champs obligatoires (*).';
         errDiv.style.display = 'block';
         return;
@@ -812,12 +812,11 @@
       document.getElementById('devis-btn-spinner').style.display = 'inline-block';
       document.getElementById('devis-submit-btn').disabled = true;
       var fd = new FormData();
-      fd.append('entry.1027645236', nom);
-      fd.append('entry.438628128',  email);
-      fd.append('entry.1552398255', tel);
-      fd.append('entry.158511827',  entreprise);
-      fd.append('entry.1656813810', service);
-      fd.append('entry.1128960185', message);
+      fd.append('entry.172992626',  nom);
+      fd.append('entry.94436013',   email);
+      fd.append('entry.1788216370', entreprise);
+      fd.append('entry.1722023391', service);
+      fd.append('entry.2147131185', message);
       fetch('https://docs.google.com/forms/d/e/1FAIpQLSe9SmHVCpCI5fLmoN5q51XxcUKms8v3dE7FsgAxZ_O6wvbuMg/formResponse', {method:'POST', mode:'no-cors', body:fd})
         .catch(function(){})
         .finally(function(){
