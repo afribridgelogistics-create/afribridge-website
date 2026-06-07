@@ -1,0 +1,88 @@
+name: Update Jobs from Google Sheets
+
+on:
+  schedule:
+    - cron: '0 6 * * *'   # Tous les jours à 6h00 UTC
+  workflow_dispatch:        # Déclenchement manuel depuis GitHub
+
+jobs:
+  sync-jobs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Fetch jobs from Google Sheets and generate jobs.json
+        env:
+          SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
+        run: |
+          python3 << 'PYEOF'
+          import urllib.request, json, os, csv, io
+
+          SHEET_ID = os.environ.get('GOOGLE_SHEET_ID', '')
+          if not SHEET_ID:
+              print("⚠️  GOOGLE_SHEET_ID non défini — jobs.json non modifié")
+              exit(0)
+
+          # Export Google Sheets en CSV (feuille publique)
+          url = f'https://docs.google.com/spreadsheets/d/{SHEET_ID}/export?format=csv&gid=0'
+
+          try:
+              with urllib.request.urlopen(url) as r:
+                  content = r.read().decode('utf-8')
+          except Exception as e:
+              print(f"❌ Erreur lecture Sheets: {e}")
+              exit(1)
+
+          reader = csv.DictReader(io.StringIO(content))
+          jobs = []
+
+          for row in reader:
+              # Ignorer les lignes vides ou inactives
+              if not row.get('titre_fr', '').strip():
+                  continue
+              actif = row.get('actif', 'OUI').strip().upper()
+              if actif not in ('OUI', 'YES', '1', 'TRUE'):
+                  continue
+
+              def split(val):
+                  return [v.strip() for v in val.split('|') if v.strip()] if val else []
+
+              jobs.append({
+                  'id':                  row.get('id', '').strip(),
+                  'titre_fr':            row.get('titre_fr', '').strip(),
+                  'titre_en':            row.get('titre_en', '').strip(),
+                  'departement_fr':      row.get('departement_fr', '').strip(),
+                  'departement_en':      row.get('departement_en', '').strip(),
+                  'type':                row.get('type', 'CDI').strip(),
+                  'lieu_fr':             row.get('lieu_fr', 'Kribi, Cameroun').strip(),
+                  'lieu_en':             row.get('lieu_en', 'Kribi, Cameroon').strip(),
+                  'description_fr':      row.get('description_fr', '').strip(),
+                  'description_en':      row.get('description_en', '').strip(),
+                  'responsabilites_fr':  split(row.get('responsabilites_fr', '')),
+                  'responsabilites_en':  split(row.get('responsabilites_en', '')),
+                  'profil_fr':           split(row.get('profil_fr', '')),
+                  'profil_en':           split(row.get('profil_en', '')),
+              })
+
+          manifest = {
+              'active': len(jobs) > 0,
+              'jobs': jobs
+          }
+
+          with open('jobs.json', 'w', encoding='utf-8') as f:
+              json.dump(manifest, f, ensure_ascii=False, indent=2)
+
+          print(f"✅ jobs.json généré : {len(jobs)} poste(s) actif(s)")
+          PYEOF
+
+      - name: Commit jobs.json
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add jobs.json
+          git diff --staged --quiet || git commit -m "💼 Auto-update jobs from Google Sheets"
+          git push
