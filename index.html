@@ -106,7 +106,8 @@
 
   /* HERO */
   .hero {
-    min-height: 100vh; padding-top: 82px;
+    height: calc(100svh - 82px); max-height: 720px; min-height: 480px;
+    padding-top: 82px;
     display: grid; grid-template-columns: 1fr 1fr;
     background: var(--navy); position: relative; overflow: hidden;
   }
@@ -128,7 +129,7 @@
     pointer-events: none;
   }
   .hero-content {
-    padding: 80px 6vw 80px 8vw; position: relative; z-index: 2;
+    padding: clamp(24px, 5svh, 64px) 6vw clamp(24px, 5svh, 64px) 8vw; position: relative; z-index: 2;
     display: flex; flex-direction: column; justify-content: center;
   }
   .hero-badge {
@@ -142,8 +143,8 @@
   .badge-dot { width: 6px; height: 6px; background: var(--orange-light); border-radius: 50%; animation: blink 2s infinite; }
   @keyframes blink { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.6)} }
   .hero h1 {
-    font-size: clamp(2.6rem, 3.8vw, 4rem); font-weight: 800; line-height: 1.06;
-    color: var(--white); letter-spacing: -0.025em; margin-bottom: 24px;
+    font-size: clamp(1.8rem, min(3vw, 5svh), 3.2rem); font-weight: 800; line-height: 1.08;
+    color: var(--white); letter-spacing: -0.025em; margin-bottom: 20px;
     animation: fadeUp 0.6s 0.1s ease both;
   }
   .hero h1 em { font-style: normal; color: var(--orange-light); }
@@ -188,10 +189,11 @@
   .stat-lbl { font-size: 0.74rem; color: rgba(255,255,255,0.45); margin-top: 6px; text-transform: uppercase; letter-spacing: 0.08em; }
 
   /* HERO VISUAL */
-  .hero-visual { position: relative; overflow: hidden; min-height: 600px; }
+  .hero-visual { position: relative; overflow: hidden; }
   .hero-visual img {
     position: absolute; inset: 0; width: 100%; height: 100%;
     object-fit: contain; object-position: center bottom;
+    display: block;
   }
   .hero-fade-left {
     position: absolute; left: 0; top: 0; bottom: 0; width: 45%;
@@ -427,6 +429,16 @@
   .lang-btn .lang-active { color: var(--orange-light); font-weight: 800; }
   .lang-btn .lang-sep { color: rgba(255,255,255,0.3); }
 
+
+  /* ═══════════════════════════════════════════════════
+     RESPONSIVE — GRANDS ÉCRANS RÉDUITS (≤ 1280px)
+  ═══════════════════════════════════════════════════ */
+  @media (max-width: 1280px) {
+    .hero { height: auto; min-height: auto; max-height: none; padding: 82px 0 0; }
+    .hero-content { padding: 60px 5vw 60px; }
+    .hero h1 { font-size: clamp(2rem, 4vw, 3rem); }
+    .hero-visual { min-height: 480px; }
+  }
   /* ═══════════════════════════════════════════════════
      RESPONSIVE — TABLETTE (≤ 1024px)
   ═══════════════════════════════════════════════════ */
@@ -473,10 +485,10 @@
     .nav-logo img { height: 52px; }
 
     /* HERO */
-    .hero { grid-template-columns: 1fr; padding-top: 72px; }
+    .hero { grid-template-columns: 1fr; padding-top: 72px; min-height: auto; }
     .hero-content { padding: 48px 5vw 40px; }
     .hero h1 { font-size: clamp(1.8rem, 7vw, 2.6rem); }
-    .hero-visual { min-height: 300px; }
+    .hero-visual { min-height: 260px; max-height: 320px; }
     .hero-stats { flex-wrap: wrap; gap: 0; }
     .hero-stat { padding-right: 20px; margin-right: 20px; margin-bottom: 12px; }
     .hero-btns { flex-direction: column; align-items: flex-start; gap: 12px; }
@@ -1096,7 +1108,7 @@ var i18n = {
     form_success_title:  'Demande envoyée !',
     form_success_desc:   'Nous avons bien reçu votre demande.<br>Un conseiller vous contacte sous 24h.',
 
-    footer_tagline: 'AfriBridge — Connecter l'Afrique, Livrer l'Excellence.',
+    footer_tagline: 'AfriBridge — Connecteril'Afrique, Livrer l'Excellence.',
     footer_copy:    '© 2025 <span>AfriBridge Logistics</span>. Tous droits réservés.',
     why_label: 'Pourquoi nous',
     why_h2: "L'expertise au<br>service de votre<br>business.",
