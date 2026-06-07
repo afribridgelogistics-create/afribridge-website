@@ -1133,8 +1133,11 @@ function applyLang(lang){
   if(fr && en){ fr.className = lang==='fr'?'lang-active':''; en.className = lang==='en'?'lang-active':''; }
   document.documentElement.lang = lang==='fr'?'fr':'en';
   try{ localStorage.setItem('afribridge_lang', lang); }catch(e){}
-  // Recharger les offres dans la nouvelle langue
-  if (typeof loadJobs === 'function') loadJobs(lang);
+  // Re-render les offres dans la nouvelle langue (sans refetch)
+  if (typeof renderJobs === 'function' && typeof allJobs !== 'undefined') {
+    var active = allJobs.length > 0;
+    renderJobs(allJobs, lang, active);
+  }
   // Re-render la modale si ouverte
   var modal = document.getElementById('modal-job');
   if (modal && modal.classList.contains('open')) {
