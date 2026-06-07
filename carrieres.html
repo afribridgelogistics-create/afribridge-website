@@ -268,20 +268,113 @@
     cursor: pointer; color: var(--gray-muted); transition: all 0.2s;
   }
   .btn-modal-close:hover { border-color: var(--navy); color: var(--navy); }
+  .nav-burger {
+    display: none; flex-direction: column; gap: 5px; cursor: pointer;
+    background: none; border: none; padding: 4px;
+  }
+  .nav-burger span {
+    display: block; width: 24px; height: 2px;
+    background: white; border-radius: 2px; transition: all 0.3s;
+  }
+  .nav-mobile {
+    display: none; position: fixed; top: 82px; left: 0; right: 0;
+    background: rgba(11,37,69,0.99); padding: 24px 6vw;
+    flex-direction: column; gap: 0; z-index: 99;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .nav-mobile.open { display: flex; }
+  .nav-mobile a {
+    color: rgba(255,255,255,0.8); text-decoration: none;
+    font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 600;
+    letter-spacing: 0.05em; text-transform: uppercase;
+    padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.07);
+    transition: color 0.2s;
+  }
+  .nav-mobile a:hover { color: var(--orange-light); }
+  .nav-mobile a:last-child { border-bottom: none; }
 
-  @media (max-width: 900px) {
-    .values-grid { grid-template-columns: 1fr 1fr; }
-    .spontanee-inner { grid-template-columns: 1fr; }
+
+  /* ═══════════════════════════════════════════════════
+     RESPONSIVE — TABLETTE (≤ 1024px)
+  ═══════════════════════════════════════════════════ */
+  @media (max-width: 1024px) {
+    nav { padding: 0 4vw; }
+    .nav-links { gap: 18px; }
+    .nav-employee { display: none; }
+
+    .hero-careers-content { padding: 60px 6vw; }
+    .stats-bar { grid-template-columns: 1fr 1fr; gap: 0; }
+    .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.2); padding: 16px 0; }
+    .stat-item:nth-child(odd) { border-right: 1px solid rgba(255,255,255,0.2); padding-right: 20px; }
+    .stat-item:last-child, .stat-item:nth-last-child(2) { border-bottom: none; }
+
+    .values-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
     .process-steps { grid-template-columns: 1fr 1fr; gap: 32px; }
     .process-steps::before { display: none; }
-    .stats-bar { grid-template-columns: 1fr 1fr; gap: 20px; }
-    .stat-item { border: none; }
-    nav .nav-links { display: none; }
+
+    .spontanee-inner { grid-template-columns: 1fr; gap: 40px; }
+    .section { padding: 64px 6vw; }
+    .offres { padding: 64px 6vw; }
+    .process { padding: 64px 6vw; }
   }
-  @media (max-width: 560px) {
-    .values-grid, .stats-bar { grid-template-columns: 1fr; }
-    .fg-row { grid-template-columns: 1fr; }
-    .offre-card { flex-direction: column; align-items: flex-start; }
+
+  /* ═══════════════════════════════════════════════════
+     RESPONSIVE — MOBILE (≤ 768px)
+  ═══════════════════════════════════════════════════ */
+  @media (max-width: 768px) {
+    nav { padding: 0 5vw; height: 72px; }
+    .nav-links { display: none; }
+    .nav-burger { display: flex; }
+    .nav-logo img { height: 52px; }
+    .nav-mobile { top: 72px; }
+
+    .hero-careers { min-height: 40vh; padding-top: 72px; }
+    .hero-careers-content { padding: 40px 5vw; }
+    .hero-careers-content h1 { font-size: clamp(1.8rem, 6vw, 2.6rem); }
+    .hero-careers-content p { font-size: 0.95rem; }
+
+    .stats-bar { grid-template-columns: 1fr 1fr; padding: 20px 5vw; }
+    .stat-num { font-size: 1.6rem; }
+
+    .section { padding: 48px 5vw; }
+    .section-title { font-size: clamp(1.5rem, 5vw, 2rem); }
+    .values-grid { grid-template-columns: 1fr; gap: 16px; }
+    .value-card { padding: 24px 20px; }
+
+    .process { padding: 48px 5vw; }
+    .process-steps { grid-template-columns: 1fr; gap: 24px; }
+    .step-num { width: 48px; height: 48px; font-size: 1rem; }
+
+    .offres { padding: 48px 5vw; }
+    .offre-card { flex-direction: column; align-items: flex-start; padding: 22px 20px; }
+    .offre-arrow { display: none; }
+
+    .spontanee { padding: 48px 5vw; }
+    .spontanee-inner { grid-template-columns: 1fr; gap: 32px; }
+    .form-card { padding: 24px 20px; }
+    .fg-row { grid-template-columns: 1fr; gap: 12px; }
+
+    .modal { padding: 28px 20px; }
+    .modal-actions { flex-direction: column; gap: 10px; }
+    .btn-modal-apply, .btn-modal-close { width: 100%; }
+
+    /* Footer */
+    .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    .footer-links-row { justify-content: center; }
+    .nav-cta { display: none; }
+  }
+
+  /* ═══════════════════════════════════════════════════
+     RESPONSIVE — PETIT MOBILE (≤ 400px)
+  ═══════════════════════════════════════════════════ */
+  @media (max-width: 400px) {
+    .hero-careers-content h1 { font-size: 1.6rem; }
+    .stats-bar { grid-template-columns: 1fr; }
+    .stat-item { border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.15); }
+    .stat-item:last-child { border-bottom: none; }
+    .values-grid { grid-template-columns: 1fr; }
+    .badge { font-size: 0.65rem; }
+    .offre-title { font-size: 1rem; }
   }
 </style>
 </head>
@@ -313,6 +406,17 @@
       </a>
     </li>
   </ul>
+  <button class="nav-burger" aria-label="Menu" onclick="document.querySelector('.nav-mobile').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<nav class="nav-mobile" id="nav-mobile-car">
+  <a href="afribridge-landing.html#about" onclick="document.getElementById('nav-mobile-car').classList.remove('open')" data-i18n="nav_about">À propos</a>
+  <a href="afribridge-landing.html#why" onclick="document.getElementById('nav-mobile-car').classList.remove('open')" data-i18n="nav_why">Pourquoi nous</a>
+  <a href="afribridge-landing.html#services" onclick="document.getElementById('nav-mobile-car').classList.remove('open')" data-i18n="nav_our_services">Nos services</a>
+  <a href="carrieres.html" onclick="document.getElementById('nav-mobile-car').classList.remove('open')" data-i18n="nav_careers">Carrières</a>
+  <a href="galerie.html" onclick="document.getElementById('nav-mobile-car').classList.remove('open')" data-i18n="nav_gallery">Galerie photo</a>
+  <a href="afribridge-landing.html#contact" onclick="document.getElementById('nav-mobile-car').classList.remove('open')" data-i18n="nav_contact">Nous contacter</a>
 </nav>
 
 <!-- HERO -->
