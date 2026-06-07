@@ -323,7 +323,7 @@
     <div class="hero-badge"><span class="badge-dot"></span><span data-i18n="car_hero_badge">Rejoignez notre équipe</span></div>
     <h1 data-i18n="car_hero_h1">Construisez l'avenir<br>de la logistique<br><em>africaine.</em></h1>
     <p data-i18n="car_hero_desc">Chez AfriBridge Logistics, chaque collaborateur contribue à connecter l'Afrique centrale au monde. Nous recherchons des talents passionnés, ambitieux et engagés.</p>
-    <a href="#offres" class="btn-primary" data-i18n="car_hero_cta">
+    <a href="#postuler" class="btn-primary" data-i18n="car_hero_cta">
       Voir les offres d'emploi
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
     </a>
@@ -423,76 +423,45 @@
   <span class="section-label" data-i18n="car_jobs_label">Offres d'emploi</span>
   <h2 class="section-title" data-i18n="car_jobs_title">Postes ouverts</h2>
   <div class="offres-grid" id="offres-grid">
-
-    <div class="offre-card" onclick="openModal('m1')">
-      <div class="offre-left">
-        <div class="offre-badges">
-          <span class="badge badge-dept">Transport</span>
-          <span class="badge badge-type" data-i18n="badge_cdi">CDI</span>
-          <span class="badge badge-loc">📍 Kribi, Cameroun</span>
-        </div>
-        <div class="offre-title" data-i18n="job1_title">Responsable Transport & Flotte</div>
-        <div class="offre-desc" data-i18n="job1_desc">Gérez et optimisez notre flotte de véhicules poids lourds. Pilotez les opérations de transport national et sous-régional.</div>
-      </div>
-      <div class="offre-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+    <!-- Chargé dynamiquement depuis jobs.json -->
+    <div id="jobs-loading" style="text-align:center;padding:40px;color:var(--gray-muted);font-family:'Syne',sans-serif;">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2" style="animation:spin 1s linear infinite;display:block;margin:0 auto 12px;"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4"/></svg>
+      Chargement…
     </div>
-
-    <div class="offre-card" onclick="openModal('m2')">
-      <div class="offre-left">
-        <div class="offre-badges">
-          <span class="badge badge-dept">Douane</span>
-          <span class="badge badge-type" data-i18n="badge_cdi">CDI</span>
-          <span class="badge badge-loc">📍 Douala, Cameroun</span>
-        </div>
-        <div class="offre-title" data-i18n="job2_title">Déclarant en Douane Certifié</div>
-        <div class="offre-desc" data-i18n="job2_desc">Traitez les formalités d'importation et d'exportation. Assurez la conformité réglementaire des dossiers clients.</div>
-      </div>
-      <div class="offre-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-    </div>
-
-    <div class="offre-card" onclick="openModal('m3')">
-      <div class="offre-left">
-        <div class="offre-badges">
-          <span class="badge badge-dept">Commercial</span>
-          <span class="badge badge-type" data-i18n="badge_cdi">CDI</span>
-          <span class="badge badge-loc">📍 Kribi / Douala</span>
-        </div>
-        <div class="offre-title" data-i18n="job3_title">Chargé(e) de Développement Commercial</div>
-        <div class="offre-desc" data-i18n="job3_desc">Prospectez de nouveaux clients, fidélisez le portefeuille existant et développez notre présence sous-régionale.</div>
-      </div>
-      <div class="offre-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-    </div>
-
-    <div class="offre-card" onclick="openModal('m4')">
-      <div class="offre-left">
-        <div class="offre-badges">
-          <span class="badge badge-dept">Logistique</span>
-          <span class="badge badge-type" data-i18n="badge_cdd">CDD 12 mois</span>
-          <span class="badge badge-loc">📍 Kribi, Cameroun</span>
-        </div>
-        <div class="offre-title" data-i18n="job4_title">Agent de Transit Portuaire</div>
-        <div class="offre-desc" data-i18n="job4_desc">Coordonnez les opérations de transit au port en eau profonde de Kribi. Gérez la documentation et les interfaces portuaires.</div>
-      </div>
-      <div class="offre-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-    </div>
-
-    <div class="offre-card" onclick="openModal('m5')">
-      <div class="offre-left">
-        <div class="offre-badges">
-          <span class="badge badge-dept">IT</span>
-          <span class="badge badge-type" data-i18n="badge_cdi">CDI</span>
-          <span class="badge badge-loc">📍 Kribi, Cameroun</span>
-        </div>
-        <div class="offre-title" data-i18n="job5_title">Développeur Web / Système d'information</div>
-        <div class="offre-desc" data-i18n="job5_desc">Développez et maintenez notre plateforme SaaS de suivi logistique. Stack moderne, missions à fort impact.</div>
-      </div>
-      <div class="offre-arrow"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-    </div>
-
   </div>
 </section>
 
+<!-- MODALE OFFRE DYNAMIQUE -->
+<div class="modal-overlay" id="modal-job">
+  <div class="modal" style="position:relative;">
+    <button class="modal-close" onclick="closeJobModal()">✕</button>
+    <div class="modal-header">
+      <div id="modal-badges" style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap;"></div>
+      <div class="modal-title" id="modal-title"></div>
+    </div>
+    <div class="modal-section-title" data-i18n="modal_mission">Mission principale</div>
+    <p id="modal-intro" style="font-size:0.9rem;line-height:1.65;color:var(--text-body);margin-bottom:16px;"></p>
+    <div class="modal-section-title" data-i18n="modal_resp">Responsabilités</div>
+    <ul id="modal-resp"></ul>
+    <div class="modal-section-title" data-i18n="modal_profile">Profil requis</div>
+    <ul id="modal-profil"></ul>
+    <div class="modal-actions">
+      <button class="btn-modal-apply" onclick="scrollToApply()" data-i18n="modal_apply_btn">Postuler maintenant</button>
+      <button class="btn-modal-close" onclick="closeJobModal()" data-i18n="modal_close_btn">Fermer</button>
+    </div>
+  </div>
+</div>
+
 <!-- CANDIDATURE SPONTANÉE -->
+<section class="no-jobs" style="padding:48px 8vw;background:var(--off-white);text-align:center;">
+  <div style="max-width:560px;margin:0 auto;">
+    <div style="width:56px;height:56px;background:rgba(232,93,26,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+    </div>
+    <h3 style="font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;color:var(--navy);margin-bottom:10px;" data-i18n="no_jobs_title">Aucun poste ouvert pour le moment</h3>
+    <p style="font-size:0.92rem;color:var(--gray-muted);line-height:1.65;" data-i18n="no_jobs_desc">Nous n'avons pas d'offres actives actuellement. Envoyez-nous votre candidature spontanée ci-dessous — nous vous contacterons dès qu'une opportunité se présente.</p>
+  </div>
+</section>
 <section class="spontanee" id="postuler">
   <div class="spontanee-inner">
     <div>
@@ -833,6 +802,148 @@ document.querySelectorAll('.modal-overlay').forEach(function(overlay) {
 })();
 </script>
 
+
+<script>
+// ── Chargement dynamique des offres depuis jobs.json ─────────────────────
+var currentJobLang = 'fr';
+var allJobs = [];
+
+function loadJobs(lang) {
+  currentJobLang = lang;
+  fetch('jobs.json')
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      allJobs = data.jobs || [];
+      renderJobs(allJobs, lang, data.active);
+    })
+    .catch(function() {
+      renderNoJobs(lang);
+    });
+}
+
+function renderJobs(jobs, lang, active) {
+  var grid = document.getElementById('offres-grid');
+  var loading = document.getElementById('jobs-loading');
+  if (loading) loading.style.display = 'none';
+  if (!grid) return;
+
+  // Vider la grille
+  grid.querySelectorAll('.offre-card, .no-jobs-msg').forEach(function(el) { el.remove(); });
+
+  if (!active || jobs.length === 0) {
+    renderNoJobs(lang);
+    return;
+  }
+
+  jobs.forEach(function(job, i) {
+    var titre = lang === 'en' ? (job.titre_en || job.titre_fr) : job.titre_fr;
+    var dept  = lang === 'en' ? (job.departement_en || job.departement_fr) : job.departement_fr;
+    var lieu  = lang === 'en' ? (job.lieu_en || job.lieu_fr) : job.lieu_fr;
+    var desc  = lang === 'en' ? (job.description_en || job.description_fr) : job.description_fr;
+
+    var card = document.createElement('div');
+    card.className = 'offre-card';
+    card.onclick = function() { openJobModal(i, lang); };
+    card.innerHTML =
+      '<div class="offre-left">' +
+        '<div class="offre-badges">' +
+          '<span class="badge badge-dept">' + dept + '</span>' +
+          '<span class="badge badge-type">' + job.type + '</span>' +
+          '<span class="badge badge-loc">📍 ' + lieu + '</span>' +
+        '</div>' +
+        '<div class="offre-title">' + titre + '</div>' +
+        '<div class="offre-desc">' + desc + '</div>' +
+      '</div>' +
+      '<div class="offre-arrow">' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;">' +
+          '<line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>' +
+        '</svg>' +
+      '</div>';
+    grid.appendChild(card);
+  });
+}
+
+function renderNoJobs(lang) {
+  var grid = document.getElementById('offres-grid');
+  var loading = document.getElementById('jobs-loading');
+  if (loading) loading.style.display = 'none';
+  if (!grid) return;
+
+  grid.querySelectorAll('.offre-card, .no-jobs-msg').forEach(function(el) { el.remove(); });
+
+  var msg = document.createElement('div');
+  msg.className = 'no-jobs-msg';
+  msg.style.cssText = 'text-align:center;padding:60px 20px;border:2px dashed var(--gray-border);border-radius:16px;background:var(--white);';
+  var title = lang === 'en' ? 'No open positions at the moment' : 'Aucun poste ouvert pour le moment';
+  var desc  = lang === 'en'
+    ? 'We have no active job openings right now. Send us your unsolicited application below.'
+    : "Nous n'avons pas d'offres actives actuellement. Envoyez-nous votre candidature spontanée ci-dessous.";
+  var cta   = lang === 'en' ? 'Unsolicited application →' : 'Candidature spontanée →';
+
+  msg.innerHTML =
+    '<div style="width:60px;height:60px;background:var(--orange-pale);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;">' +
+      '<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--orange)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>' +
+    '</div>' +
+    '<h3 style="font-family:Syne,sans-serif;font-size:1.15rem;font-weight:800;color:var(--navy);margin-bottom:12px;">' + title + '</h3>' +
+    '<p style="font-size:0.92rem;color:var(--gray-muted);line-height:1.65;max-width:480px;margin:0 auto 28px;">' + desc + '</p>' +
+    '<a href="#postuler" style="display:inline-flex;align-items:center;gap:8px;background:var(--orange);color:white;padding:12px 28px;border-radius:8px;text-decoration:none;font-family:Syne,sans-serif;font-weight:700;font-size:0.88rem;">' + cta + '</a>';
+  grid.appendChild(msg);
+}
+
+function openJobModal(idx, lang) {
+  var job = allJobs[idx];
+  if (!job) return;
+  lang = lang || currentJobLang;
+
+  var titre = lang === 'en' ? (job.titre_en || job.titre_fr) : job.titre_fr;
+  var dept  = lang === 'en' ? (job.departement_en || job.departement_fr) : job.departement_fr;
+  var lieu  = lang === 'en' ? (job.lieu_en || job.lieu_fr) : job.lieu_fr;
+  var desc  = lang === 'en' ? (job.description_en || job.description_fr) : job.description_fr;
+  var resps = lang === 'en' ? (job.responsabilites_en || job.responsabilites_fr) : job.responsabilites_fr;
+  var profil = lang === 'en' ? (job.profil_en || job.profil_fr) : job.profil_fr;
+
+  document.getElementById('modal-title').textContent = titre;
+  document.getElementById('modal-intro').textContent = desc;
+
+  var badges = document.getElementById('modal-badges');
+  badges.innerHTML =
+    '<span class="badge badge-dept">' + dept + '</span>' +
+    '<span class="badge badge-type">' + job.type + '</span>' +
+    '<span class="badge badge-loc">📍 ' + lieu + '</span>';
+
+  var respList = document.getElementById('modal-resp');
+  respList.innerHTML = (resps || []).map(function(r) {
+    return '<li>' + r + '</li>';
+  }).join('');
+
+  var profilList = document.getElementById('modal-profil');
+  profilList.innerHTML = (profil || []).map(function(p) {
+    return '<li>' + p + '</li>';
+  }).join('');
+
+  // Stocker l'index pour re-render si langue change
+  document.getElementById('modal-job').setAttribute('data-job-idx', idx);
+  document.getElementById('modal-job').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeJobModal() {
+  document.getElementById('modal-job').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('modal-job').addEventListener('click', function(e) {
+  if (e.target === this) closeJobModal();
+});
+
+// Charger au démarrage
+document.addEventListener('DOMContentLoaded', function() {
+  var saved = '';
+  try { saved = localStorage.getItem('afribridge_lang') || ''; } catch(e) {}
+  currentJobLang = saved === 'en' ? 'en' : 'fr';
+  loadJobs(currentJobLang);
+});
+</script>
 <script>
 var LANG = 'fr';
 var i18n_car = {
@@ -1031,6 +1142,14 @@ function applyLang(lang){
   if(fr && en){ fr.className = lang==='fr'?'lang-active':''; en.className = lang==='en'?'lang-active':''; }
   document.documentElement.lang = lang==='fr'?'fr':'en';
   try{ localStorage.setItem('afribridge_lang', lang); }catch(e){}
+  // Recharger les offres dans la nouvelle langue
+  if (typeof loadJobs === 'function') loadJobs(lang);
+  // Re-render la modale si ouverte
+  var modal = document.getElementById('modal-job');
+  if (modal && modal.classList.contains('open')) {
+    var idx = parseInt(modal.getAttribute('data-job-idx'));
+    if (!isNaN(idx)) openJobModal(idx, lang);
+  }
 }
 function toggleLang(){ applyLang(LANG==='fr'?'en':'fr'); }
 document.addEventListener('DOMContentLoaded', function(){
