@@ -1,0 +1,10 @@
+# AfriBridge Logistics — robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://afribridges.com/sitemap.xml
+
+# Ne pas indexer les fichiers de configuration
+Disallow: /manifest.json
+Disallow: /jobs.json

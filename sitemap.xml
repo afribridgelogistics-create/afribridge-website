@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://afribridges.com/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://afribridges.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://afribridges.com/"/>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://afribridges.com/carrieres.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://afribridges.com/carrieres.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://afribridges.com/carrieres.html"/>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://afribridges.com/galerie.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://afribridges.com/galerie.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://afribridges.com/galerie.html"/>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://afribridges.com/confidentialite.html</loc>
+    <lastmod>2025-06-01</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>
